@@ -10,9 +10,14 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const config = require('../config');
 const ScoutDB = require('../database/db');
-const FlippaScraper = require('../scrapers/flippa');
 const DealScorer = require('../scoring/scorer');
+
+// Choose scraper based on config
+const FlippaScraper = config.scraperMode === 'real' 
+  ? require('../scrapers/flippa-real')
+  : require('../scrapers/flippa');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
