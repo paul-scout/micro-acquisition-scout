@@ -4,6 +4,9 @@
   "description": "> Automated deal scout for micro-acquisitions ($4k-$50k businesses). Find profitable small businesses before others do.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/api/server.js",
+    "demo": "node src/demo.js",
+    "demo-db": "node src/demo-db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +23,8 @@
   "dependencies": {
     "axios": "^1.13.4",
     "better-sqlite3": "^12.6.2",
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
   }
 }
